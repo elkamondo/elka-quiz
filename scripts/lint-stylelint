@@ -1,0 +1,1 @@
+./node_modules/stylelint/bin/stylelint.js ./client/styles/*.scss ./client/styles/*.css
