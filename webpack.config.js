@@ -29,6 +29,7 @@ module.exports = {
       Components: path.resolve(__dirname, './client/components/'),
       Assets: path.resolve(__dirname, './client/assets/'),
       Styles: path.resolve(__dirname, './client/styles/'),
+      Api: path.resolve(__dirname, './client/api/'),
       '@': path.resolve(__dirname, './client/')
     }
   },

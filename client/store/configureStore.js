@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
+import { enableBatching } from 'redux-batched-actions';
 import thunk from 'redux-thunk';
 
 import rootReducer from './reducers';
@@ -12,7 +13,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default function configureStore(preloadedState) {
   return createStore(
-    rootReducer,
+    enableBatching(rootReducer),
     preloadedState,
     applyMiddleware(...middlewares)
   );

@@ -6,6 +6,7 @@ const cssLoaders = [{ loader: 'css-loader', options: { importLoaders: 1 } }];
 
 const ExtractTextPluginConfig = new ExtractTextPlugin('bundle.css');
 
+config.devtool = 'cheap-module-eval-source-map';
 config.module.rules = config.module.rules.concat([
   {
     test: /\.css$/,

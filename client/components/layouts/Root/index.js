@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Main from '../Main';
+import GameBoard from '../GameBoard';
 
 export default function Root({ store }) {
   return (
     <Provider store={store}>
       <Router>
-        <Route exact path="/" component={Main} />
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route path="/categorie/:categoryName" component={GameBoard} />
+        </Switch>
       </Router>
     </Provider>
   );

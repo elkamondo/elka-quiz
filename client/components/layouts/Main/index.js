@@ -1,7 +1,9 @@
 import React from 'react';
 
 import CategoryList from 'Components/components/CategoryList';
-import { selectCategories as categories } from 'Api/utils';
+// import { selectCategories as categories } from 'Api/utils';
+
+const categories = ['Géographie'];
 
 export default function Main() {
   return (
