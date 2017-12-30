@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function QuestionCounter({ number, total }) {
+function QuestionCounter({ counter, total }) {
   return (
     <p>
-      {number} / {total}
+      {counter} / {total}
     </p>
   );
 }
 
 QuestionCounter.propTypes = {
-  number: PropTypes.number.isRequired,
+  counter: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired
 };
 

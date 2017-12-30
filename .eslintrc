@@ -19,6 +19,7 @@
     "allowImportExportEverywhere": false
   },
   "rules": {
+    "no-plusplus": "off",
     "no-console": "off",
     "no-shadow": "off",
     "react/jsx-uses-react": "error",

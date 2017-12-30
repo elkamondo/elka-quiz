@@ -1,9 +1,19 @@
 import questions from './data.json';
 
-export const selectCategories = questions.map(({ category }) => category);
-
 const findQuestionsByCategory = category =>
   questions.find(question => question.category === category);
 
-export const selectQuestionsByCategory = category =>
-  findQuestionsByCategory(category).questions || null;
+export function shuffleArray(array) {
+  const copyArray = [...array];
+  for (let i = copyArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copyArray[i], copyArray[j]] = [copyArray[j], copyArray[i]];
+  }
+  return copyArray;
+}
+
+export const selectCategories = questions.map(({ category }) => category);
+
+export function selectQuestionsByCategory(category) {
+  return shuffleArray(findQuestionsByCategory(category).questions) || null;
+}

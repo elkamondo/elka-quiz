@@ -2,19 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Question({ question }) {
-  return (
-    <div>
-      <p>{question}</p>
-    </div>
-  );
+  return <p>{question}</p>;
 }
 
 Question.propTypes = {
-  question: PropTypes.string
-};
-
-Question.defaultProps = {
-  question: ''
+  question: PropTypes.string.isRequired
 };
 
 export default Question;

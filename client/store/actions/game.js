@@ -1,12 +1,22 @@
-export const SET_ID_NEXT_QUESTION = 'SET_ID_NEXT_QUESTION';
-export const SET_ANSWER = 'SET_ANSWER';
+import { selectRightAnswer } from 'Store/reducers/game';
 
-export const setIdNextQuestion = id => ({
-  type: SET_ID_NEXT_QUESTION,
-  id
+export const SET_ID_NEXT_QUESTION = 'SET_ID_NEXT_QUESTION';
+export const SET_USER_ANSWER = 'SET_USER_ANSWER';
+export const RETAKE_QUIZ = 'RETAKE_QUIZ';
+
+export const setIdNextQuestion = () => ({
+  type: SET_ID_NEXT_QUESTION
 });
 
-export const setAnswer = answer => ({
-  type: SET_ANSWER,
-  answer
+export const setUserAnswer = userAnswer => (dispatch, getState) => {
+  const rightAnswer = selectRightAnswer(getState());
+  dispatch({
+    type: SET_USER_ANSWER,
+    userAnswer,
+    rightAnswer
+  });
+};
+
+export const retakeQuiz = () => ({
+  type: RETAKE_QUIZ
 });

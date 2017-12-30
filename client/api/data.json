@@ -5,27 +5,27 @@
       {
         "question": "Quelle est la capitale du \"Pologne\"?",
         "choices": ["Reykjavik", "Varsovie", "Helsinki", "Tirana"],
-        "answer": 1
+        "answer": "Varsovie"
       },
       {
         "question": "Combien y'a t-il d'états dans l'union européen?",
         "choices": ["26", "27", "28", "29"],
-        "answer": 2
+        "answer": "28"
       },
       {
         "question": "\"Minsk\" est la capitale de?",
         "choices": ["Albania", "Autriche", "Slovénie", "Biélorussie"],
-        "answer": 3
+        "answer": "Biélorussie"
       },
       {
         "question": "Combien y'a t-il d'états dans les états-unis?",
         "choices": ["51", "50", "52", "53"],
-        "answer": 1
+        "answer": "50"
       },
       {
         "question": "Où se trouve l'île de \"Groenland\"?",
         "choices": ["Océanie", "Europe", "Afrique", "Amérique du nord"],
-        "answer": 3
+        "answer": "Amérique du nord"
       }
     ]
   },
@@ -34,54 +34,34 @@
     "questions": [
       {
         "question": "En quelle année a été commencée la seconde guerre mondiale ?",
-        "answer": "1939",
-        "choices": ["1945", "1939", "1940", "1943"]
+        "choices": ["1945", "1939", "1940", "1943"],
+        "answer": "1939"
       },
       {
         "question": "En quelle année l'Ukraine a eu son indépendance ?",
-        "answer": "1991",
-        "choices": ["1991", "1972", "1985", "1989"]
+        "choices": ["1991", "1972", "1985", "1989"],
+        "answer": "1991"
       },
       {
         "question": "Quel pays a été envahi par les États-Unis en 2003 ?",
-        "answer": "l'Irak",
-        "choices": ["l'Afghanistan", "la Syrie", "le palestine", "l'Irak"]
+        "choices": ["l'Afghanistan", "la Syrie", "le palestine", "l'Irak"],
+        "answer": "l'Irak"
       },
       {
         "question": "En quelle année a été créée l’Union européenne ?",
-        "answer": "1993",
-        "choices": ["1985", "1993", "1989", "1996"]
+        "choices": ["1985", "1993", "1989", "1996"],
+        "answer": "1993"
       },
       {
         "question": "En quelle année a été terminée la première guerre mondiale ?",
-        "answer": "1918",
-        "choices": ["1920", "1915", "1918", "1917"]
+        "choices": ["1920", "1915", "1918", "1917"],
+        "answer": "1918"
       }
     ]
   },
   {
     "category": "Sport",
     "questions": [
-      {
-        "question": "Quelle est la nationalité du footballeur \"Eden Hazard\"?",
-        "answer": "Belge",
-        "choices": ["Anglais", "Français", "Belge", "Espagnol"]
-      },
-      {
-        "question": "Quelle est la nationalité du footballeur \"Eden Hazard\"?",
-        "answer": "Belge",
-        "choices": ["Anglais", "Français", "Belge", "Espagnol"]
-      },
-      {
-        "question": "Quelle est la nationalité du footballeur \"Eden Hazard\"?",
-        "answer": "Belge",
-        "choices": ["Anglais", "Français", "Belge", "Espagnol"]
-      },
-      {
-        "question": "Quelle est la nationalité du footballeur \"Eden Hazard\"?",
-        "answer": "Belge",
-        "choices": ["Anglais", "Français", "Belge", "Espagnol"]
-      },
       {
         "question": "Quelle est la nationalité du footballeur \"Eden Hazard\"?",
         "answer": "Belge",
@@ -94,89 +74,37 @@
     "questions": [
       {
         "question": "Quelle est la capitale culturelle du Maroc?",
-        "answer": "Rabat",
-        "choices": ["Casablanca", "Tanger", "Fès", "Rabat"]
+        "choices": ["Casablanca", "Tanger", "Fès", "Rabat"],
+        "answer": "Rabat"
       },
       {
         "question": "Qui est le prédécesseur du sultan Sidi Mohammed ben Youssef?",
-        "answer": "Moulay Youssef",
-        "choices": ["Mohammed V", "Moulay Youssef", "Mohammed ben Arafa", "Moulay Abdelhafid"]
+        "choices": ["Mohammed V", "Moulay Youssef", "Mohammed ben Arafa", "Moulay Abdelhafid"],
+        "answer": "Moulay Youssef"
       },
       {
         "question": "En quelle date le Maroc a pris son indépendance du protectorat français?",
-        "answer": "2 mars 1956",
-        "choices": ["2 mars 1956", "11 janvier 1956", "31 juillet 1956", "1 mai 1956"]
+        "choices": ["2 mars 1956", "11 janvier 1956", "31 juillet 1956", "1 mai 1956"],
+        "answer": "2 mars 1956"
       },
       {
         "question": "Dans quelle chaîne montagneuse situé le \"Djebel Toubkal\"?",
-        "answer": "Haut Atlas",
-        "choices": ["Moyen Atlas", "Anti-Atlas", "Haut Atlas", "Le Rif"]
+        "choices": ["Moyen Atlas", "Anti-Atlas", "Haut Atlas", "Le Rif"],
+        "answer": "Haut Atlas"
       },
       {
         "question": "Combien y'a t-il de régions dans le Maroc?",
-        "answer": "12",
-        "choices": ["12", "16", "14", "15"]
+        "choices": ["12", "16", "14", "15"],
+        "answer": "12"
       }
     ]
   },
   {
     "category": "Informatique",
-    "questions": [
-      {
-        "question": "Quelle est la capitale culturelle du Maroc?",
-        "answer": "Rabat",
-        "choices": ["Casablanca", "Tanger", "Fès", "Rabat"]
-      },
-      {
-        "question": "Quelle est la capitale culturelle du Maroc?",
-        "answer": "Rabat",
-        "choices": ["Casablanca", "Tanger", "Fès", "Rabat"]
-      },
-      {
-        "question": "Quelle est la capitale culturelle du Maroc?",
-        "answer": "Rabat",
-        "choices": ["Casablanca", "Tanger", "Fès", "Rabat"]
-      },
-      {
-        "question": "Quelle est la capitale culturelle du Maroc?",
-        "answer": "Rabat",
-        "choices": ["Casablanca", "Tanger", "Fès", "Rabat"]
-      },
-      {
-        "question": "Quelle est la capitale culturelle du Maroc?",
-        "answer": "Rabat",
-        "choices": ["Casablanca", "Tanger", "Fès", "Rabat"]
-      }
-    ]
+    "questions": []
   },
   {
     "category": "Mathématiques",
-    "questions": [
-      {
-        "question": "Quelle est la capitale culturelle du Maroc?",
-        "answer": "Rabat",
-        "choices": ["Casablanca", "Tanger", "Fès", "Rabat"]
-      },
-      {
-        "question": "Quelle est la capitale culturelle du Maroc?",
-        "answer": "Rabat",
-        "choices": ["Casablanca", "Tanger", "Fès", "Rabat"]
-      },
-      {
-        "question": "Quelle est la capitale culturelle du Maroc?",
-        "answer": "Rabat",
-        "choices": ["Casablanca", "Tanger", "Fès", "Rabat"]
-      },
-      {
-        "question": "Quelle est la capitale culturelle du Maroc?",
-        "answer": "Rabat",
-        "choices": ["Casablanca", "Tanger", "Fès", "Rabat"]
-      },
-      {
-        "question": "Quelle est la capitale culturelle du Maroc?",
-        "answer": "Rabat",
-        "choices": ["Casablanca", "Tanger", "Fès", "Rabat"]
-      }
-    ]
+    "questions": []
   }
 ]
