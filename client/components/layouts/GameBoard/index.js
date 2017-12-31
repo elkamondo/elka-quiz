@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
+import ProgressBar from 'Components/components/ProgressBar';
 import CategoryName from 'Components/components/CategoryName';
 import QuestionCounter from 'Components/components/QuestionCounter';
 import Question from 'Components/components/Question';
@@ -50,12 +52,17 @@ class GameBoard extends Component {
       choices
     } = this.props;
 
+    if (numberOfQuestions === 0) {
+      return <Redirect to="/" />;
+    }
+
     if (counter > numberOfQuestions) {
       return <ResultDisplay total={numberOfQuestions} />;
     }
 
     return (
       <div className="main container has-text-centered">
+        <ProgressBar />
         <CategoryName name={categoryName} />
         <QuestionCounter counter={counter} total={numberOfQuestions} />
         <Question question={question} />
