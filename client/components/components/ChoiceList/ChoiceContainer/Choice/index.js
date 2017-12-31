@@ -19,7 +19,7 @@ function Choice(props) {
   });
 
   return (
-    <li>
+    <div className="Choice column is-half">
       <button
         className={classNames}
         onClick={
@@ -28,7 +28,7 @@ function Choice(props) {
       >
         {content}
       </button>
-    </li>
+    </div>
   );
 }
 

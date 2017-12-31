@@ -5,9 +5,9 @@ import ChoiceContainer from './ChoiceContainer';
 
 function ChoiceList({ choices }) {
   return (
-    <ul>
+    <div className="columns is-multiline is-mobile">
       {choices.map(choice => <ChoiceContainer key={choice} content={choice} />)}
-    </ul>
+    </div>
   );
 }
 

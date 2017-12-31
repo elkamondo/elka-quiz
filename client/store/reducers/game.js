@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 
+import { shuffleArray } from 'Api/utils';
 import * as actions from '../actions/game';
 
 const initialState = {
@@ -34,6 +35,7 @@ export default (state = initialState, action) => {
       });
 
     case actions.RETAKE_QUIZ:
+    case actions.CHANGE_CATEGORY:
       return Object.assign({}, state, initialState);
 
     default:
@@ -53,7 +55,8 @@ export const selectQuestion = createSelector(
 export const selectChoices = createSelector(
   questionsSelector,
   currentQuestionIdSelector,
-  (questions, id) => (id < questions.length ? questions[id].choices : [])
+  (questions, id) =>
+    id < questions.length ? shuffleArray(questions[id].choices) : []
 );
 
 export const selectRightAnswer = createSelector(

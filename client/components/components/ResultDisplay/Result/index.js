@@ -1,16 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-function Result({ score, total, onRetakeQuiz }) {
+function Result({ score, total, onRetakeQuiz, onChangeCategory }) {
   return (
-    <div className="container has-text-centered">
+    <div className="main container has-text-centered">
       <p>{`Tu as obtenu ${score} sur ${total}`}</p>
-      <button
-        className="button is-primary is-large"
-        onClick={() => onRetakeQuiz()}
-      >
+      <button className="button is-large" onClick={() => onRetakeQuiz()}>
         Rejouer
       </button>
+      <Link
+        to="/"
+        className="button is-large"
+        onClick={() => onChangeCategory()}
+      >
+        Changer la catégorie
+      </Link>
     </div>
   );
 }
@@ -18,7 +23,8 @@ function Result({ score, total, onRetakeQuiz }) {
 Result.propTypes = {
   score: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
-  onRetakeQuiz: PropTypes.func.isRequired
+  onRetakeQuiz: PropTypes.func.isRequired,
+  onChangeCategory: PropTypes.func.isRequired
 };
 
 export default Result;

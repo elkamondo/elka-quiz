@@ -3,6 +3,7 @@ import { selectRightAnswer } from 'Store/reducers/game';
 export const SET_ID_NEXT_QUESTION = 'SET_ID_NEXT_QUESTION';
 export const SET_USER_ANSWER = 'SET_USER_ANSWER';
 export const RETAKE_QUIZ = 'RETAKE_QUIZ';
+export const CHANGE_CATEGORY = 'CHANGE_CATEGORY';
 
 export const setIdNextQuestion = () => ({
   type: SET_ID_NEXT_QUESTION
@@ -19,4 +20,8 @@ export const setUserAnswer = userAnswer => (dispatch, getState) => {
 
 export const retakeQuiz = () => ({
   type: RETAKE_QUIZ
+});
+
+export const changeCategory = () => ({
+  type: CHANGE_CATEGORY
 });
