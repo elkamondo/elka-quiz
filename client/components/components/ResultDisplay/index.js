@@ -4,7 +4,8 @@ import { retakeQuiz, changeCategory } from 'Store/actions/game';
 import Result from './Result';
 
 const stateToProps = ({ game }) => ({
-  score: game.score
+  score: game.score,
+  correct: game.correctAnswers
 });
 
 const dispatchToProps = {

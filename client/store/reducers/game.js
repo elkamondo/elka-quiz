@@ -9,7 +9,8 @@ const initialState = {
   userAnswer: '',
   rightAnswer: '',
   currentQuestionId: 0,
-  score: 0
+  score: 0,
+  correctAnswers: 0
 };
 
 export default (state = initialState, action) => {
@@ -27,11 +28,19 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, {
         hasQuestionAnswered: true,
         userAnswer: action.userAnswer,
-        rightAnswer: action.rightAnswer,
+        rightAnswer: action.rightAnswer
+      });
+
+    case actions.SET_SCORE:
+      return Object.assign({}, state, {
         score:
-          action.userAnswer === action.rightAnswer
-            ? state.score + 1
-            : state.score
+          state.userAnswer === state.rightAnswer
+            ? state.score + action.score
+            : state.score,
+        correctAnswers:
+          state.userAnswer === state.rightAnswer
+            ? state.correctAnswers + 1
+            : state.correctAnswers
       });
 
     case actions.RETAKE_QUIZ:
