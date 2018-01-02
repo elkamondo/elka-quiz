@@ -6,8 +6,8 @@ class ProgressBar extends Component {
   static propTypes = {
     speed: PropTypes.number.isRequired,
     hasQuestionAnswered: PropTypes.bool.isRequired,
-    onSetScore: PropTypes.func.isRequired
-    // onSetUserAnswer: PropTypes.func.isRequired
+    onSetScore: PropTypes.func.isRequired,
+    onSetUserAnswer: PropTypes.func.isRequired
   };
 
   state = {
@@ -33,7 +33,7 @@ class ProgressBar extends Component {
       clearInterval(this.interval);
 
       if (!hasQuestionAnswered) {
-        // this.props.onSetUserAnswer(undefined);
+        this.props.onSetUserAnswer(undefined);
       }
     }
 

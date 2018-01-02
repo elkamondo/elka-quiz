@@ -14,7 +14,9 @@ const ModuleConcatenationConfig = new webpack.optimize.ModuleConcatenationPlugin
 module.exports = {
   devServer: {
     contentBase: './dist',
-    historyApiFallback: true
+    historyApiFallback: true,
+    host: '0.0.0.0',
+    disableHostCheck: true
   },
   entry: ['./client/index.js'],
   output: {

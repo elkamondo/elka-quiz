@@ -12,12 +12,9 @@ const dispatchToProps = {
 function CategoryList({ categories, onClickHandler }) {
   return (
     <div className="columns is-multiline">
-      {categories.map(name =>
-        Category({
-          name,
-          onClickHandler
-        })
-      )}
+      {categories.map(name => (
+        <Category key={name} name={name} onClickHandler={onClickHandler} />
+      ))}
     </div>
   );
 }

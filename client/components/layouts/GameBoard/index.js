@@ -23,6 +23,7 @@ class GameBoard extends Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps.hasQuestionAnswered) {
+      navigator.vibrate(200);
       setTimeout(() => {
         this.props.onSetIdNextQuetion();
       }, 1500);
@@ -59,13 +60,13 @@ class GameBoard extends Component {
     }
 
     return (
-      <div className="main container has-text-centered">
+      <div className="GameBoard container has-text-centered">
         <ScoreDisplay />
         <ProgressBarContainer speed={300} />
-        <CategoryName name={categoryName} />
-        <QuestionCounter counter={counter} total={numberOfQuestions} />
-        <Question question={question} />
-        <ChoiceList choices={choices} />
+        {CategoryName({ name: categoryName })}
+        {QuestionCounter({ counter, total: numberOfQuestions })}
+        {Question({ question })}
+        {ChoiceList({ choices })}
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -27,46 +27,53 @@ const categories = new Map([
   ['Sport', 'sport']
 ]);
 
-function Category({ name, onClickHandler }) {
-  const shortName = categories.get(name) || '';
-  const image = imageSource[shortName];
-  return (
-    <React.Fragment key={name}>
-      <section className="column is-hidden-mobile is-one-third-desktop is-half-tablet">
-        <Link to={`/categorie/${shortName}`}>
-          {/* eslint-disable */}
-          <figure onClick={() => onClickHandler(name)}>
-            <img width="180" src={image} alt={name} />
-          </figure>
-          {/* eslint-enable */}
-        </Link>
-        <p className="subtitle">{name}</p>
-      </section>
-      <section className="column is-hidden-tablet">
-        <Link to={`/categorie/${shortName}`}>
-          {/* eslint-disable */}
-          <div
-            className="Category--box box"
-            onClick={() => onClickHandler(name)}
-          >
-          {/* eslint-enable */}
-            <article className="media">
-              <div className="media-left">
-                <figure>
-                  <img className="Category--image" src={image} alt={name} />
-                </figure>
-              </div>
-              <div className="Category--title media-content">
-                <div className="content has-text-weight-semibold">
-                  <p>{name}</p>
+class Category extends PureComponent {
+  handleClick = () => {
+    this.props.onClickHandler(this.props.name);
+  };
+
+  render() {
+    const { name } = this.props;
+    const shortName = categories.get(name) || '';
+    const image = imageSource[shortName];
+    return (
+      <React.Fragment>
+        <section className="column is-hidden-mobile is-one-third-desktop is-half-tablet">
+          <Link to={`/categorie/${shortName}`}>
+            {/* eslint-disable */}
+            <figure onClick={this.handleClick}>
+              <img width="180" src={image} alt={name} />
+            </figure>
+            {/* eslint-enable */}
+          </Link>
+          <p className="subtitle">{name}</p>
+        </section>
+        <section className="column is-hidden-tablet">
+          <Link to={`/categorie/${shortName}`}>
+            {/* eslint-disable */}
+            <div
+              className="Category--box box"
+              onClick={this.handleClick}
+            >
+            {/* eslint-enable */}
+              <article className="media">
+                <div className="media-left">
+                  <figure>
+                    <img className="Category--image" src={image} alt={name} />
+                  </figure>
                 </div>
-              </div>
-            </article>
-          </div>
-        </Link>
-      </section>
-    </React.Fragment>
-  );
+                <div className="Category--title media-content">
+                  <div className="content has-text-weight-semibold">
+                    <p>{name}</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </Link>
+        </section>
+      </React.Fragment>
+    );
+  }
 }
 
 Category.propTypes = {

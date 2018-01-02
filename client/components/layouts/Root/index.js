@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from 'react-router-dom';
 
 import Quiz from 'Components/components/Quiz';
 import Footer from 'Components/structures/Footer';
@@ -15,6 +20,7 @@ export default function Root({ store }) {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route path="/categorie/:categoryName" component={Quiz} />
+            <Redirect to="/" />
           </Switch>
           <Footer />
         </React.Fragment>
