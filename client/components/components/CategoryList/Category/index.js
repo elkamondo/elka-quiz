@@ -2,6 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import geographie from 'Assets/icons/categories/geographie.png';
+import histoire from 'Assets/icons/categories/histoire.png';
+import informatique from 'Assets/icons/categories/informatique.png';
+import maroc from 'Assets/icons/categories/maroc.png';
+import math from 'Assets/icons/categories/math.png';
+import sport from 'Assets/icons/categories/sport.png';
+
+const imageSource = {
+  geographie,
+  histoire,
+  informatique,
+  maroc,
+  math,
+  sport
+};
+
 const categories = new Map([
   ['Géographie', 'geographie'],
   ['Histoire', 'histoire'],
@@ -13,20 +29,43 @@ const categories = new Map([
 
 function Category({ name, onClickHandler }) {
   const shortName = categories.get(name) || '';
+  const image = imageSource[shortName];
   return (
-    <div key={name} className="column is-one-third-desktop is-half-tablet">
-      {/* eslint-disable */}
-      <Link to={`/categorie/${shortName}`}>
-        <img
-          onClick={() => onClickHandler(name)}
-          width="180"
-          src={require(`../../../../assets/icons/categories/${shortName}.png`)}
-          alt={`${name} icône`}
-        />
-      </Link>
-      {/* eslint-enable */}
-      <p className="subtitle">{name}</p>
-    </div>
+    <React.Fragment key={name}>
+      <section className="column is-hidden-mobile is-one-third-desktop is-half-tablet">
+        <Link to={`/categorie/${shortName}`}>
+          {/* eslint-disable */}
+          <figure onClick={() => onClickHandler(name)}>
+            <img width="180" src={image} alt={name} />
+          </figure>
+          {/* eslint-enable */}
+        </Link>
+        <p className="subtitle">{name}</p>
+      </section>
+      <section className="column is-hidden-tablet">
+        <Link to={`/categorie/${shortName}`}>
+          {/* eslint-disable */}
+          <div
+            className="Category--box box"
+            onClick={() => onClickHandler(name)}
+          >
+          {/* eslint-enable */}
+            <article className="media">
+              <div className="media-left">
+                <figure>
+                  <img className="Category--image" src={image} alt={name} />
+                </figure>
+              </div>
+              <div className="Category--title media-content">
+                <div className="content has-text-weight-semibold">
+                  <p>{name}</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </Link>
+      </section>
+    </React.Fragment>
   );
 }
 
