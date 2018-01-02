@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-
-const stateToProps = ({ game }) => ({
-  hasQuestionAnswered: game.hasQuestionAnswered
-});
+import classnames from 'classnames';
 
 class ProgressBar extends Component {
   static propTypes = {
+    speed: PropTypes.number.isRequired,
     hasQuestionAnswered: PropTypes.bool.isRequired,
     onSetScore: PropTypes.func.isRequired
+    // onSetUserAnswer: PropTypes.func.isRequired
   };
 
   state = {
@@ -19,27 +17,31 @@ class ProgressBar extends Component {
   componentDidMount() {
     this.interval = setInterval(() => {
       this.changeValue();
-    }, 200);
+    }, this.props.speed);
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.hasQuestionAnswered) {
-      console.log(Math.round(this.state.value * 1.5));
       this.props.onSetScore(Math.round(this.state.value * 1.5));
       clearInterval(this.interval);
     }
   }
 
   componentWillUpdate(newProps, newState) {
+    const { hasQuestionAnswered } = this.props;
     if (newState.value === 0) {
       clearInterval(this.interval);
+
+      if (!hasQuestionAnswered) {
+        // this.props.onSetUserAnswer(undefined);
+      }
     }
 
-    if (this.props.hasQuestionAnswered) {
+    if (hasQuestionAnswered) {
       this.resetValue();
       this.interval = setInterval(() => {
         this.changeValue();
-      }, 200);
+      }, this.props.speed);
     }
   }
 
@@ -59,9 +61,17 @@ class ProgressBar extends Component {
 
   render() {
     const { value } = this.state;
+    const classNames = classnames({
+      progress: true,
+      'is-success': value >= 75,
+      'is-primary': value >= 50 && value < 75,
+      'is-warning': value >= 25 && value < 50,
+      'is-danger': value < 25
+    });
+
     return (
       <div className="ProgressBar">
-        <progress className="progress" value={value} max="100">
+        <progress className={classNames} value={value} max="100">
           {`${value}%`}
         </progress>
       </div>
@@ -69,4 +79,4 @@ class ProgressBar extends Component {
   }
 }
 
-export default connect(stateToProps)(ProgressBar);
+export default ProgressBar;
