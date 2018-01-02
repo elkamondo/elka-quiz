@@ -5,7 +5,11 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="content has-text-centered">
-          <p>Copyright &#169; 2017 React Boilerplate. All Rights Reserved.</p>
+          <p>
+            Built with <span className="Footer--heart">&#10084;</span>
+            {' By '}
+            <a href="http://www.github.com/elkamondo">MOHCINE EL KASSIB</a>
+          </p>
         </div>
       </div>
     </footer>
