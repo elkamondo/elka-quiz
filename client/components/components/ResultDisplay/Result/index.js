@@ -30,25 +30,27 @@ class Result extends PureComponent {
 
     return (
       <div className="main container has-text-centered">
-        <section className="column is-8-desktop is-offset-2-desktop is-10-mobile is-offset-1-mobile">
+        <section className="column is-paddingless is-8-desktop is-offset-2-desktop">
           <div className="Result">
             <p className="Result-congrats title">Félicitations !</p>
             <section className="Result--score">
               <div>
                 <p>Votre score</p>
-                <h1 className="title is-1">{score}</h1>
+                <span className="is-size-2 has-text-weight-bold">{score}</span>
               </div>
               <hr />
               <div className="columns is-mobile">
-                <div className="column is-one-half">
+                <div className="column">
                   <p>Correct</p>
-                  <h3 className="title is-3">
+                  <span className="is-size-3 has-text-weight-bold">
                     {correct}/{total}
-                  </h3>
+                  </span>
                 </div>
                 <div className="column">
                   <p>Record</p>
-                  <h3 className="title is-3">{record}</h3>
+                  <span className="is-size-3 has-text-weight-bold">
+                    {record}
+                  </span>
                 </div>
               </div>
             </section>
@@ -58,7 +60,7 @@ class Result extends PureComponent {
         <div className="columns is-multiline">
           <div className="column">
             <button
-              className="Result--button button is-large"
+              className="Result--button button is-large is-size-5-mobile"
               onClick={this.handleRetakeQuiz}
             >
               Rejouer
@@ -68,7 +70,7 @@ class Result extends PureComponent {
           <div className="column">
             <Link
               to="/"
-              className="Result--button button is-large"
+              className="Result--button button is-large is-size-5-mobile"
               onClick={this.handleChangeCategory}
             >
               Changer la catégorie

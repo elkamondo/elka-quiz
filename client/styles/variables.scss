@@ -1,3 +1,5 @@
+@import '~bulma/sass/utilities/initial-variables';
+
 // Colors
 $white: #fff;
 $whitesmoke: #f5f5f5;
@@ -26,3 +28,6 @@ $weight-light: 200;
 $weight-normal: 400;
 $weight-semibold: 600;
 $weight-bold: 800;
+
+// Responsiveness
+$tablet: 768px;

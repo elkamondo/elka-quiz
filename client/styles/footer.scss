@@ -1,5 +1,10 @@
 .footer {
-  background-color: $lightest-grey;
+  background-color: transparent;
   padding: 40px 20px;
   text-align: center;
+}
+
+.Footer--heart {
+  color: crimson;
+  font-size: 1.3rem;
 }

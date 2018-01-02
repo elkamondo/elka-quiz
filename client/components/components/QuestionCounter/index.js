@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function QuestionCounter({ counter, total }) {
   return (
-    <p>
+    <p className="is-size-4">
       {counter} / {total}
     </p>
   );

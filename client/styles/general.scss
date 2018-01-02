@@ -3,6 +3,12 @@ html {
   font-size: 14px;
 }
 
+#app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 a {
   color: $info;
 }
