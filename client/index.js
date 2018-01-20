@@ -8,10 +8,7 @@ import './styles/index.scss';
 import './assets';
 
 const persistedState = localStorage.getItem('quiz-highscores')
-  ? Object.assign(
-      {},
-      { highscores: JSON.parse(localStorage.getItem('quiz-highscores')) }
-    )
+  ? { ...{ highscores: JSON.parse(localStorage.getItem('quiz-highscores')) } }
   : {};
 
 const store = configureStore(persistedState);

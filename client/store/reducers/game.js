@@ -16,23 +16,26 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case actions.SET_ID_NEXT_QUESTION:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         currentQuestionId: state.currentQuestionId + 1,
         questionNumber: state.questionNumber + 1,
         userAnswer: '',
         rightAnswer: '',
         hasQuestionAnswered: false
-      });
+      };
 
     case actions.SET_USER_ANSWER:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         hasQuestionAnswered: true,
         userAnswer: action.userAnswer,
         rightAnswer: action.rightAnswer
-      });
+      };
 
     case actions.SET_SCORE:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         score:
           state.userAnswer === state.rightAnswer
             ? state.score + action.score
@@ -41,11 +44,11 @@ export default (state = initialState, action) => {
           state.userAnswer === state.rightAnswer
             ? state.correctAnswers + 1
             : state.correctAnswers
-      });
+      };
 
     case actions.RETAKE_QUIZ:
     case actions.CHANGE_CATEGORY:
-      return Object.assign({}, state, initialState);
+      return { ...state, initialState };
 
     default:
       return state;
