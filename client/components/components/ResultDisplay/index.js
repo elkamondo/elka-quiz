@@ -7,7 +7,8 @@ import Result from './Result';
 const stateToProps = ({ category, game, highscores }) => ({
   score: game.score,
   correct: game.correctAnswers,
-  record: highscores[category]
+  record: highscores.categories[category],
+  newRecord: highscores.newRecord
 });
 
 const dispatchToProps = {

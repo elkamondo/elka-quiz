@@ -8,6 +8,7 @@ class Result extends PureComponent {
     record: PropTypes.number.isRequired,
     correct: PropTypes.number.isRequired,
     total: PropTypes.number.isRequired,
+    newRecord: PropTypes.bool.isRequired,
     onRetakeQuiz: PropTypes.func.isRequired,
     onChangeCategory: PropTypes.func.isRequired,
     onSaveHighScores: PropTypes.func.isRequired
@@ -26,7 +27,7 @@ class Result extends PureComponent {
   };
 
   render() {
-    const { score, record, correct, total } = this.props;
+    const { score, record, correct, total, newRecord } = this.props;
 
     return (
       <div className="main container has-text-centered">
@@ -36,7 +37,24 @@ class Result extends PureComponent {
             <section className="Result--score">
               <div>
                 <p>Votre score</p>
-                <span className="is-size-2 has-text-weight-bold">{score}</span>
+                {newRecord ? (
+                  <span className="has-text-weight-bold">
+                    <span
+                      role="img"
+                      aria-label="Winners Trophy"
+                      className="is-size-1"
+                      style={{ color: '#ffb817' }}
+                    >
+                      &#x1F3C6;
+                      <span style={{ color: '#b28010' }}>{score}</span>
+                      &#x1F3C6;
+                    </span>
+                  </span>
+                ) : (
+                  <span className="is-size-1 has-text-weight-bold">
+                    {score}
+                  </span>
+                )}
               </div>
               <hr />
               <div className="columns is-mobile">
@@ -48,7 +66,10 @@ class Result extends PureComponent {
                 </div>
                 <div className="column">
                   <p>Record</p>
-                  <span className="is-size-3 has-text-weight-bold">
+                  <span
+                    className="is-size-3 has-text-weight-bold"
+                    style={{ color: newRecord ? '#b28010' : '#4a4a4a' }}
+                  >
                     {record}
                   </span>
                 </div>
@@ -83,3 +104,6 @@ class Result extends PureComponent {
 }
 
 export default Result;
+
+// darken: #b28010
+// lighten: #FFB817

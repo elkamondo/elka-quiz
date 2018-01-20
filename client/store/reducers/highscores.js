@@ -1,22 +1,33 @@
 import * as actions from '../actions/highscores';
 
 const initialState = {
-  Géographie: 0,
-  Histoire: 0,
-  Informatique: 0,
-  Maroc: 0,
-  Mathématiques: 0,
-  Sport: 0
+  categories: {
+    Géographie: 0,
+    Histoire: 0,
+    Informatique: 0,
+    Maroc: 0,
+    Mathématiques: 0,
+    Sport: 0
+  },
+  newRecord: false
 };
 
 export default (state = initialState, action) => {
-  const { category, score } = action;
+  const { type, category, score } = action;
 
-  switch (action.type) {
+  switch (type) {
     case actions.SET_HIGH_SCORE:
-      return Object.assign({}, state, {
-        [category]: score > state[category] ? score : state[category]
-      });
+      return {
+        ...state,
+        categories: {
+          ...state.categories,
+          [category]:
+            score > state.categories[category]
+              ? score
+              : state.categories[category]
+        },
+        newRecord: score > state.categories[category]
+      };
 
     default:
       return state;

@@ -4,7 +4,7 @@ import Score from './Score';
 
 const stateToProps = ({ category, game, highscores }) => ({
   score: game.score,
-  record: highscores[category]
+  record: highscores.categories[category]
 });
 
 export default connect(stateToProps)(Score);
