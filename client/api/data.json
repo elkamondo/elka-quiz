@@ -3,27 +3,27 @@
     "category": "Géographie",
     "questions": [
       {
-        "question": "Quelle est la capitale du \"Pologne\"?",
+        "question": "Quelle est la capitale du \"Pologne\" ?",
         "choices": ["Reykjavik", "Varsovie", "Helsinki", "Tirana"],
         "answer": "Varsovie"
       },
       {
-        "question": "Combien y'a t-il d'états dans l'union européen?",
+        "question": "Combien y'a t-il d'états dans l'union européen ?",
         "choices": ["26", "27", "28", "29"],
         "answer": "28"
       },
       {
-        "question": "\"Minsk\" est la capitale de?",
+        "question": "\"Minsk\" est la capitale de ?",
         "choices": ["Albania", "Autriche", "Slovénie", "Biélorussie"],
         "answer": "Biélorussie"
       },
       {
-        "question": "Combien y'a t-il d'états dans les états-unis?",
+        "question": "Combien y'a t-il d'états dans les états-unis ?",
         "choices": ["51", "50", "52", "53"],
         "answer": "50"
       },
       {
-        "question": "Où se trouve l'île de \"Groenland\"?",
+        "question": "Où se trouve l'île de \"Groenland\" ?",
         "choices": ["Océanie", "Europe", "Afrique", "Amérique du nord"],
         "answer": "Amérique du nord"
       }
@@ -63,9 +63,59 @@
     "category": "Sport",
     "questions": [
       {
-        "question": "Quelle est la nationalité du footballeur \"Eden Hazard\"?",
-        "answer": "Belge",
-        "choices": ["Anglais", "Français", "Belge", "Espagnol"]
+        "question": "Quelle est la nationalité du footballeur \"Eden Hazard\" ?",
+        "choices": ["Anglais", "Français", "Belge", "Espagnol"],
+        "answer": "Belge"
+      },
+      {
+        "question": "Qui a remporté le plus des coupes de Champions League ?",
+        "choices": ["Barcelone", "Real Madrid", "Manchester United", "Bayern Munich"],
+        "answer": "Real Madrid"
+      },
+      {
+        "question": "Où aura lieu la coupe du monde de football en 2022 ?",
+        "choices": ["Qatar", "France", "Russie", "Chine"],
+        "answer": "Qatar"
+      },
+      {
+        "question": "Qui est Novak Djokovic ?",
+        "choices": ["Un footballeur", "Un joueur de tennis", "Un boxeur", "Un nageur"],
+        "answer": "Un joueur de tennis"
+      },
+      {
+        "question": "Les Jeux Olympiques (été ou hiver) sont organisés :",
+        "choices": [
+          "Tous les deux ans",
+          "Tous les quatres ans",
+          "Tous les cinq ans",
+          "Chaque année"
+        ],
+        "answer": "Tous les quatres ans"
+      },
+      {
+        "question": "Quelle médaille olympique n'existe pas ?",
+        "choices": ["Or", "Bronze", "Cuivre", "Argent"],
+        "answer": "Cuivre"
+      },
+      {
+        "question": "Combien y a-t-il de joueurs dans une équipe de basketball ?",
+        "choices": ["5", "6", "7", "8"],
+        "answer": "5"
+      },
+      {
+        "question": "Dans quel sport s'affronte-t-on sur un ring ?",
+        "choices": ["Boxe", "Judo", "Lutte", "Karaté"],
+        "answer": "Boxe"
+      },
+      {
+        "question": "Le leader du Tour de France cycliste porte un maillot de quelle couleur ?",
+        "choices": ["blanc à pois rouges", "vert", "arc en ciel", "jaune"],
+        "answer": "jaune"
+      },
+      {
+        "question": "Qui a remporté le Ballon d'Or en 2017 ?",
+        "choices": ["Cristiano Ronaldo", "Lionel Messi", "Neymar", "Mauro Icardi"],
+        "answer": "Cristiano Ronaldo"
       }
     ]
   },
@@ -73,27 +123,27 @@
     "category": "Maroc",
     "questions": [
       {
-        "question": "Quelle est la capitale culturelle du Maroc?",
+        "question": "Quelle est la capitale culturelle du Maroc ?",
         "choices": ["Casablanca", "Tanger", "Fès", "Rabat"],
         "answer": "Rabat"
       },
       {
-        "question": "Qui est le prédécesseur du sultan Sidi Mohammed ben Youssef?",
+        "question": "Qui est le prédécesseur du sultan Sidi Mohammed ben Youssef ?",
         "choices": ["Mohammed V", "Moulay Youssef", "Mohammed ben Arafa", "Moulay Abdelhafid"],
         "answer": "Moulay Youssef"
       },
       {
-        "question": "En quelle date le Maroc a pris son indépendance du protectorat français?",
+        "question": "En quelle date le Maroc a pris son indépendance du protectorat français ?",
         "choices": ["2 mars 1956", "11 janvier 1956", "31 juillet 1956", "1 mai 1956"],
         "answer": "2 mars 1956"
       },
       {
-        "question": "Dans quelle chaîne montagneuse situé le \"Djebel Toubkal\"?",
+        "question": "Dans quelle chaîne montagneuse situé le \"Djebel Toubkal\" ?",
         "choices": ["Moyen Atlas", "Anti-Atlas", "Haut Atlas", "Le Rif"],
         "answer": "Haut Atlas"
       },
       {
-        "question": "Combien y'a t-il de régions dans le Maroc?",
+        "question": "Combien y'a t-il de régions dans le Maroc ?",
         "choices": ["12", "16", "14", "15"],
         "answer": "12"
       }
@@ -101,10 +151,142 @@
   },
   {
     "category": "Informatique",
-    "questions": []
+    "questions": [
+      {
+        "question": "La plateforme \"Reddit\" a été créé par ?",
+        "choices": [
+          "Jeff Atwood",
+          "Steve Huffman",
+          "Jack Dorsey",
+          "Mark Zuckerberg"
+        ],
+        "answer": "Steve Huffman"
+      },
+      {
+        "question": "En quelle année, a-t-il été créé le système d'exploitation \"Linux\" ?",
+        "choices": ["1991", "1982", "1995", "1980"],
+        "answer": "1991"
+      },
+      {
+        "question": "Que veut dire l'acronyme \"WWW\" ?",
+        "choices": [
+          "World Wide Web",
+          "Web World Widget",
+          "World Wide Wireless",
+          "Wonderful World Web"
+        ],
+        "answer": "World Wide Web"
+      },
+      {
+        "question": "Que signifie le 'A' de \"ADSL\" ?",
+        "choices": ["Asynchronous", "Asymmetric", "Accelerator", "Attention"],
+        "answer": "Asymmetric"
+      },
+      {
+        "question": "Qu'est ce qu'un \"freeware\" ?",
+        "choices": [
+          "Un logiciel payant",
+          "Un logiciel gratuit",
+          "Un serveur Web",
+          "Un système d'exploitation"
+        ],
+        "answer": "Un logiciel gratuit"
+      },
+      {
+        "question": "Une adresse IPv4 se code sur ?",
+        "choices": ["4 bits", "8 bits", "16 bits", "32 bits"],
+        "answer": "32 bits"
+      },
+      {
+        "question": "Qui est le créateur du langage \"Java\" ?",
+        "choices": [
+          "James Goslin",
+          "Dennis Ritchie",
+          "Guido van Rossum",
+          "Niklaus Wirth"
+        ],
+        "answer": "James Goslin"
+      },
+      {
+        "question": "Le code ASCII de 67 correspond à quel caractère ?",
+        "choices": ["C", "c", "B", "a"],
+        "answer": "C"
+      },
+      {
+        "question": "FTP est un protocole:",
+        "choices": [
+          "d'affichage de pages Web",
+          "de transfert de fichiers",
+          "de routage",
+          "de résolution d'adresse IP"
+        ],
+        "answer": "de transfert de fichiers"
+      },
+      {
+        "question": "C'est quoi \"emacs\" ?",
+        "choices": [
+          "Un éditeur de texte",
+          "Une calculatrice",
+          "Une distro de Linux",
+          "Un navigateur Web"
+        ],
+        "answer": "Un éditeur de texte"
+      }
+    ]
   },
   {
     "category": "Mathématiques",
-    "questions": []
+    "questions": [
+      {
+        "question": "Quel est le plus petit ?",
+        "choices": ["5 ÷ 3", "3", "6 ÷ 4", "4 - 2"],
+        "answer": "6 ÷ 4"
+      },
+      {
+        "question": "Quelle est la nationalité du mathématicien \"Bernhard Riemann\" ?",
+        "choices": ["Allemand", "Anglais", "Français", "Polonais"],
+        "answer": "Allemand"
+      },
+      {
+        "question": "\u221A196 = ?",
+        "choices": ["13", "14", "15", "16"],
+        "answer": "14"
+      },
+      {
+        "question": "12 × 12 + 60 = ?",
+        "choices": ["300", "200", "250", "204"],
+        "answer": "204"
+      },
+      {
+        "question": "Quel est le plus grand ?",
+        "choices": ["\u221A81 × 7", "5 × 2³", "80 - 18", "42 + 15"],
+        "answer": "\u221A81 × 7"
+      },
+      {
+        "question": "16 × 11 = ?",
+        "choices": ["176", "166", "182", "150"],
+        "answer": "176"
+      },
+      {
+        "question": "375 ÷ 15 = ?",
+        "choices": ["40", "30", "35", "25"],
+        "answer": "25"
+      },
+      {
+        "question": "36 + 29 = ?",
+        "choices": ["55", "65", "79", "68"],
+        "answer": "65"
+      },
+      {
+        "question": "sin(x)² + cos(x)² = ?",
+        "choices": ["1", "2x", "x", "0"],
+        "answer": "1"
+      },
+      {
+        "question": "Si f(x) = 3x² - 1. Alors combien ça fait combien f(4) ?",
+        "choices": ["47", "49", "59", "38"],
+        "answer": "47"
+      }
+    ]
   }
 ]
