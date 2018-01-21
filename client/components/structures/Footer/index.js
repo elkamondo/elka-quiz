@@ -4,11 +4,35 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="content has-text-centered">
+        <div className="has-text-centered">
           <p>
-            Built with <span className="Footer--heart">&#10084;</span>
+            Built with <span className="c-footer-heart">&#10084;</span>
             {' By '}
-            <a href="http://www.github.com/elkamondo">MOHCINE EL KASSIB</a>
+            <a
+              href="https://www.github.com/elkamondo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              MOHCINE EL KASSIB
+            </a>
+          </p>
+          <p>
+            Made with{' '}
+            <a
+              href="https://bulma.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Bulma
+            </a>
+            {' ─ '}Icons By{' '}
+            <a
+              href="https://www.flaticon.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Flaticon
+            </a>
           </p>
         </div>
       </div>
