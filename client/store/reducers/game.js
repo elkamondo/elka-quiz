@@ -48,7 +48,7 @@ export default (state = initialState, action) => {
 
     case actions.RETAKE_QUIZ:
     case actions.CHANGE_CATEGORY:
-      return { ...state, initialState };
+      return { ...initialState };
 
     default:
       return state;
