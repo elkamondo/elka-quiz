@@ -28,6 +28,24 @@ const categories = new Map([
 ]);
 
 class Category extends PureComponent {
+  state = {
+    width: Math.min(window.innerWidth || Infinity, window.screen.width)
+  };
+
+  componentWillMount() {
+    window.addEventListener('resize', this.handleWindowResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowResize);
+  }
+
+  handleWindowResize = () => {
+    this.setState({
+      width: Math.min(window.innerWidth || Infinity, window.screen.width)
+    });
+  };
+
   handleClick = () => {
     this.props.onClickHandler(this.props.name);
   };
@@ -36,33 +54,25 @@ class Category extends PureComponent {
     const { name } = this.props;
     const shortName = categories.get(name) || '';
     const image = imageSource[shortName];
-    return (
-      <React.Fragment>
-        <section className="column is-hidden-mobile is-one-third-desktop is-half-tablet">
-          <Link to={`/categorie/${shortName}`}>
-            {/* eslint-disable */}
-            <figure onClick={this.handleClick}>
-              <img width="180" src={image} alt={name} />
-            </figure>
-            {/* eslint-enable */}
-          </Link>
-          <p className="subtitle">{name}</p>
-        </section>
-        <section className="column is-hidden-tablet">
+    const isMobile = this.state.width < 769;
+
+    if (isMobile) {
+      return (
+        <section className="column">
           <Link to={`/categorie/${shortName}`}>
             {/* eslint-disable */}
             <div
-              className="Category--box box"
+              className="c-category-box box"
               onClick={this.handleClick}
             >
             {/* eslint-enable */}
               <article className="media">
                 <div className="media-left">
                   <figure>
-                    <img className="Category--image" src={image} alt={name} />
+                    <img className="c-category-image" src={image} alt={name} />
                   </figure>
                 </div>
-                <div className="Category--title media-content">
+                <div className="c-category-title media-content">
                   <div className="content has-text-weight-semibold">
                     <p>{name}</p>
                   </div>
@@ -71,7 +81,20 @@ class Category extends PureComponent {
             </div>
           </Link>
         </section>
-      </React.Fragment>
+      );
+    }
+
+    return (
+      <section className="column is-one-third-desktop is-half-tablet">
+        <Link to={`/categorie/${shortName}`}>
+          {/* eslint-disable */}
+          <figure className="c-category-figure" onClick={this.handleClick}>
+            <img width="180" src={image} alt={name} />
+          </figure>
+          {/* eslint-enable */}
+        </Link>
+        <p className="subtitle">{name}</p>
+      </section>
     );
   }
 }
