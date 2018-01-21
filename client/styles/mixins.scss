@@ -1,0 +1,10 @@
+@mixin teal-button {
+  border: 1px solid $light-teal-cream;
+  width: 100%;
+
+  &:hover {
+    background: $teal-cream;
+    border: 1px solid $white;
+    color: $white;
+  }
+}

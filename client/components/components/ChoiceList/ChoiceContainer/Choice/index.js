@@ -19,7 +19,7 @@ function Choice(props) {
   });
 
   return (
-    <div className="Choice column is-half">
+    <div className="c-choice column is-half">
       <button
         className={classNames}
         onClick={

@@ -60,7 +60,7 @@ class GameBoard extends Component {
     }
 
     return (
-      <div className="GameBoard container has-text-centered">
+      <div className="c-gameboard container has-text-centered">
         <ScoreDisplay />
         <ProgressBarContainer speed={300} />
         {CategoryName({ name: categoryName })}

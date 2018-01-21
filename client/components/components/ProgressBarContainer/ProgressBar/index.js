@@ -70,7 +70,7 @@ class ProgressBar extends Component {
     });
 
     return (
-      <div className="ProgressBar">
+      <div className="c-progressbar">
         <progress className={classNames} value={value} max="100">
           {`${value}%`}
         </progress>

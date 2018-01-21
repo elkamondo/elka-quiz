@@ -1,27 +1,31 @@
-@mixin teal-button {
-  width: 100%;
-  border: 1px solid $light-teal-cream;
+@import 'mixins';
 
-  &:hover {
-    border: 1px solid $white;
-    background: $teal-cream;
-    color: $white;
-  }
+.c-main-title {
+  margin-bottom: 30px;
 }
 
-.GameBoard {
+.c-gameboard {
   margin-top: 2em;
+
   @media screen and (max-width: 360px) {
     margin-top: 10px;
   }
 }
 
-.Category--box {
+.c-category-box {
   background: $light-teal-cream;
   margin: 1rem;
 }
 
-.Category--image {
+.c-category-figure {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.c-category-image {
   width: 100px;
 
   @media screen and (max-width: 360px) {
@@ -29,71 +33,73 @@
   }
 }
 
-.Category--title {
-  display: flex;
-  justify-content: center;
+.c-category-title {
   align-items: center;
-  height: 100px;
+  color: $whitesmoke;
+  display: flex;
   font-size: 2.4rem;
-  color: whitesmoke;
+  height: 100px;
+  justify-content: center;
 
   @media screen and (max-width: 360px) {
-    height: 64px;
     font-size: 1.8rem;
+    height: 64px;
   }
 }
 
-.Question {
-  height: 100px;
-  display: flex;
+.c-question {
   align-items: center;
-  justify-content: center;
   background-color: $teal-cream;
-  color: white;
+  color: $white;
+  display: flex;
   font-size: 1.6rem;
+  height: 100px;
+  justify-content: center;
 
   @media screen and (min-width: 769px) {
     border-radius: 20px;
   }
 }
 
-.ProgressBar {
+.c-progressbar {
   margin: 10px;
 }
 
-.ChoiceList {
+.c-choicelist {
   margin-top: 80px;
 }
 
-.Choice > button {
+.c-choice > button {
+  @include teal-button;
   height: 80px;
   white-space: normal;
   word-wrap: break-word;
-  @include teal-button;
 }
 
-.Result {
+.c-result {
   background: $teal-cream;
-  padding: 20px;
   border-radius: 10px;
-  margin-bottom: 50px;
+  margin: 48px;
+  padding: 20px;
 }
 
-.Result-congrats {
+.c-result-congrats {
   color: $white;
   font-size: 2.5rem;
+
   @media screen and (max-width: 360px) {
     font-size: 2rem;
   }
 }
 
-.Result--score {
+.c-result-score {
   background: $white;
   padding: 20px;
 }
 
-.Result--button {
+.c-result-button {
   @include teal-button;
+
   @media screen and (max-width: 320px) {
     font-size: 1.3rem;
   }

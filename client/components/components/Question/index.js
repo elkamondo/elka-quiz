@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Question({ question }) {
   return (
-    <div className="Question column is-8-desktop is-offset-2-desktop">
+    <div className="c-question column is-8-desktop is-offset-2-desktop">
       <p>{question}</p>
     </div>
   );

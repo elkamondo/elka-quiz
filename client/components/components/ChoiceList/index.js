@@ -5,7 +5,7 @@ import ChoiceContainer from './ChoiceContainer';
 
 function ChoiceList({ choices }) {
   return (
-    <div className="ChoiceList columns is-multiline is-mobile">
+    <div className="c-choicelist columns is-multiline is-mobile">
       {choices.map(choice => <ChoiceContainer key={choice} content={choice} />)}
     </div>
   );

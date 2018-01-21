@@ -32,9 +32,9 @@ class Result extends PureComponent {
     return (
       <div className="main container has-text-centered">
         <section className="column is-paddingless is-8-desktop is-offset-2-desktop">
-          <div className="Result">
-            <p className="Result-congrats title">Félicitations !</p>
-            <section className="Result--score">
+          <div className="c-result">
+            <p className="c-result-congrats title">Félicitations !</p>
+            <section className="c-result-score">
               <div>
                 <p>Votre score</p>
                 {newRecord ? (
@@ -81,7 +81,7 @@ class Result extends PureComponent {
         <div className="columns is-multiline">
           <div className="column">
             <button
-              className="Result--button button is-large is-size-5-mobile"
+              className="c-result-button button is-large is-size-5-mobile"
               onClick={this.handleRetakeQuiz}
             >
               Rejouer
@@ -91,7 +91,7 @@ class Result extends PureComponent {
           <div className="column">
             <Link
               to="/"
-              className="Result--button button is-large is-size-5-mobile"
+              className="c-result-button button is-large is-size-5-mobile"
               onClick={this.handleChangeCategory}
             >
               Changer la catégorie
@@ -104,6 +104,3 @@ class Result extends PureComponent {
 }
 
 export default Result;
-
-// darken: #b28010
-// lighten: #FFB817
