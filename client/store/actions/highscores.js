@@ -12,6 +12,6 @@ export const setHighScore = () => (dispatch, getState) => {
 
 export const saveHighScores = () => (dispatch, getState) => {
   const { highscores } = getState();
-  localStorage.setItem('quiz-highscores', JSON.stringify(highscores));
+  localStorage.setItem('quizHighscores', JSON.stringify(highscores));
   dispatch({ type: SAVE_HIGHSCORES });
 };
