@@ -62,7 +62,7 @@ class GameBoard extends Component {
     return (
       <div className="c-gameboard container has-text-centered">
         <ScoreDisplay />
-        <ProgressBarContainer speed={300} />
+        <ProgressBarContainer speed={400} />
         {CategoryName({ name: categoryName })}
         {QuestionCounter({ counter, total: numberOfQuestions })}
         {Question({ question })}
