@@ -54,7 +54,7 @@ class Category extends PureComponent {
     const { name } = this.props;
     const shortName = categories.get(name) || '';
     const image = imageSource[shortName];
-    const isMobile = this.state.width < 769;
+    const isMobile = this.state.width < 768;
 
     if (isMobile) {
       return (
