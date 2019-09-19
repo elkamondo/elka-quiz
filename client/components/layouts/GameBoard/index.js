@@ -11,26 +11,18 @@ import ChoiceList from 'Components/components/ChoiceList';
 import ResultDisplay from 'Components/components/ResultDisplay';
 
 class GameBoard extends Component {
-  static propTypes = {
-    counter: PropTypes.number.isRequired,
-    numberOfQuestions: PropTypes.number.isRequired,
-    categoryName: PropTypes.string.isRequired,
-    question: PropTypes.string.isRequired,
-    choices: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-    onSetIdNextQuetion: PropTypes.func.isRequired,
-    onSetHighScore: PropTypes.func.isRequired
-  };
-
   componentWillReceiveProps(newProps) {
+    const { onSetIdNextQuetion, onSetHighScore } = this.props;
+
     if (newProps.hasQuestionAnswered) {
       navigator.vibrate(200);
       setTimeout(() => {
-        this.props.onSetIdNextQuetion();
+        onSetIdNextQuetion();
       }, 1500);
     }
 
     if (newProps.counter > newProps.numberOfQuestions) {
-      this.props.onSetHighScore();
+      onSetHighScore();
     }
   }
 
@@ -71,5 +63,15 @@ class GameBoard extends Component {
     );
   }
 }
+
+GameBoard.propTypes = {
+  counter: PropTypes.number.isRequired,
+  numberOfQuestions: PropTypes.number.isRequired,
+  categoryName: PropTypes.string.isRequired,
+  question: PropTypes.string.isRequired,
+  choices: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  onSetIdNextQuetion: PropTypes.func.isRequired,
+  onSetHighScore: PropTypes.func.isRequired
+};
 
 export default GameBoard;

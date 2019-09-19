@@ -28,9 +28,12 @@ const categories = new Map([
 ]);
 
 class Category extends PureComponent {
-  state = {
-    width: Math.min(window.innerWidth || Infinity, window.screen.width)
-  };
+  constructor() {
+    super();
+    this.state = {
+      width: Math.min(window.innerWidth || Infinity, window.screen.width)
+    };
+  }
 
   componentWillMount() {
     window.addEventListener('resize', this.handleWindowResize);
@@ -47,14 +50,16 @@ class Category extends PureComponent {
   };
 
   handleClick = () => {
-    this.props.onClickHandler(this.props.name);
+    const { name, onClickHandler } = this.props;
+    onClickHandler(name);
   };
 
   render() {
     const { name } = this.props;
+    const { width } = this.state;
     const shortName = categories.get(name) || '';
     const image = imageSource[shortName];
-    const isMobile = this.state.width < 768;
+    const isMobile = width < 768;
 
     if (isMobile) {
       return (

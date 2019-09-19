@@ -7,7 +7,7 @@ import githubRibbon from 'Assets/github-ribbon.png';
 
 export default function Main() {
   return (
-    <React.Fragment>
+    <>
       <a
         href="https://github.com/elkamondo/elka-quiz"
         target="_blank"
@@ -24,6 +24,6 @@ export default function Main() {
         <h2 className="c-main-title title is-2">Séléctionner une catégorie</h2>
         <CategoryList categories={categories} />
       </main>
-    </React.Fragment>
+    </>
   );
 }

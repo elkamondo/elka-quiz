@@ -1,0 +1,5 @@
+export const SET_ID_NEXT_QUESTION = 'SET_ID_NEXT_QUESTION';
+export const SET_USER_ANSWER = 'SET_USER_ANSWER';
+export const SET_SCORE = 'SET_SCORE';
+export const RETAKE_QUIZ = 'RETAKE_QUIZ';
+export const CHANGE_CATEGORY = 'CHANGE_CATEGORY';

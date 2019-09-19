@@ -1,6 +1,6 @@
 import { selectQuestionsByCategory, shuffleArray } from 'Api/utils';
 import { SELECT_QUESTIONS } from '../actions/questions';
-import { RETAKE_QUIZ, CHANGE_CATEGORY } from '../actions/game';
+import { RETAKE_QUIZ, CHANGE_CATEGORY } from '../actions';
 
 export default (state = [], action) => {
   switch (action.type) {

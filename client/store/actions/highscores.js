@@ -2,7 +2,11 @@ export const SET_HIGH_SCORE = 'SET_HIGH_SCORE';
 export const SAVE_HIGHSCORES = 'SAVE_HIGHSCORES';
 
 export const setHighScore = () => (dispatch, getState) => {
-  const { category, game: { score } } = getState();
+  const {
+    category,
+    game: { score }
+  } = getState();
+
   dispatch({
     type: SET_HIGH_SCORE,
     category,

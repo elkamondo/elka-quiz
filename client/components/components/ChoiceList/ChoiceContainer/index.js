@@ -16,4 +16,7 @@ const stateToProps = (state, { content }) => {
 
 const dispatchToProps = { onSetUserAnswer: setUserAnswer };
 
-export default connect(stateToProps, dispatchToProps)(Choice);
+export default connect(
+  stateToProps,
+  dispatchToProps
+)(Choice);

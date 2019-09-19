@@ -1,5 +1,5 @@
 import * as actions from 'Store/actions/category';
-import { CHANGE_CATEGORY } from '../actions/game';
+import { CHANGE_CATEGORY } from '../actions';
 
 export default (state = '', action) => {
   switch (action.type) {

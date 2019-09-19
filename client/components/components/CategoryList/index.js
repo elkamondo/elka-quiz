@@ -24,4 +24,7 @@ CategoryList.propTypes = {
   onClickHandler: PropTypes.func.isRequired
 };
 
-export default connect(null, dispatchToProps)(CategoryList);
+export default connect(
+  null,
+  dispatchToProps
+)(CategoryList);

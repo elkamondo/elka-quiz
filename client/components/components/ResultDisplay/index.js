@@ -17,4 +17,7 @@ const dispatchToProps = {
   onSaveHighScores: saveHighScores
 };
 
-export default connect(stateToProps, dispatchToProps)(Result);
+export default connect(
+  stateToProps,
+  dispatchToProps
+)(Result);

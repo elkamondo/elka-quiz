@@ -21,6 +21,7 @@ function Choice(props) {
   return (
     <div className="c-choice column is-half">
       <button
+        type="button"
         className={classNames}
         onClick={
           !hasQuestionAnswered ? () => onSetUserAnswer(content) : undefined

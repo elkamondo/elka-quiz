@@ -6,7 +6,9 @@ export default function Footer() {
       <div className="container">
         <div className="has-text-centered">
           <p>
-            Built with <span className="c-footer-heart">&#10084;</span>
+            Built with
+            {` `}
+            <span className="c-footer-heart">&#10084;</span>
             {' By '}
             <a
               href="https://www.github.com/elkamondo"
@@ -17,7 +19,8 @@ export default function Footer() {
             </a>
           </p>
           <p>
-            Made with{' '}
+            Made with
+            {` `}
             <a
               href="https://bulma.io/"
               target="_blank"
@@ -25,7 +28,9 @@ export default function Footer() {
             >
               Bulma
             </a>
-            {' ─ '}Icons By{' '}
+            {' ─ '}
+            Icons By
+            {` `}
             <a
               href="https://www.flaticon.com/"
               target="_blank"

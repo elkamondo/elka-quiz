@@ -3,37 +3,36 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 class ProgressBar extends Component {
-  static propTypes = {
-    speed: PropTypes.number.isRequired,
-    hasQuestionAnswered: PropTypes.bool.isRequired,
-    onSetScore: PropTypes.func.isRequired,
-    onSetUserAnswer: PropTypes.func.isRequired
-  };
-
-  state = {
-    value: 100
-  };
+  constructor() {
+    super();
+    this.state = {
+      value: 100
+    };
+  }
 
   componentDidMount() {
+    const { speed } = this.props;
     this.interval = setInterval(() => {
       this.changeValue();
-    }, this.props.speed);
+    }, speed);
   }
 
   componentWillReceiveProps(newProps) {
+    const { onSetScore } = this.props;
+    const { value } = this.state;
     if (newProps.hasQuestionAnswered) {
-      this.props.onSetScore(Math.round(this.state.value * 1.5));
+      onSetScore(Math.round(value * 1.5));
       clearInterval(this.interval);
     }
   }
 
   componentWillUpdate(newProps, newState) {
-    const { hasQuestionAnswered } = this.props;
+    const { speed, hasQuestionAnswered, onSetUserAnswer } = this.props;
     if (newState.value === 0) {
       clearInterval(this.interval);
 
       if (!hasQuestionAnswered) {
-        this.props.onSetUserAnswer(undefined);
+        onSetUserAnswer(undefined);
       }
     }
 
@@ -41,7 +40,7 @@ class ProgressBar extends Component {
       this.resetValue();
       this.interval = setInterval(() => {
         this.changeValue();
-      }, this.props.speed);
+      }, speed);
     }
   }
 
@@ -78,5 +77,12 @@ class ProgressBar extends Component {
     );
   }
 }
+
+ProgressBar.propTypes = {
+  speed: PropTypes.number.isRequired,
+  hasQuestionAnswered: PropTypes.bool.isRequired,
+  onSetScore: PropTypes.func.isRequired,
+  onSetUserAnswer: PropTypes.func.isRequired
+};
 
 export default ProgressBar;

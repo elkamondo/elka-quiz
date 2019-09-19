@@ -1,33 +1,28 @@
-import { selectRightAnswer } from 'Store/reducers/game';
-
-export const SET_ID_NEXT_QUESTION = 'SET_ID_NEXT_QUESTION';
-export const SET_USER_ANSWER = 'SET_USER_ANSWER';
-export const SET_SCORE = 'SET_SCORE';
-export const RETAKE_QUIZ = 'RETAKE_QUIZ';
-export const CHANGE_CATEGORY = 'CHANGE_CATEGORY';
+import { selectRightAnswer } from 'Store/selectors';
+import * as actions from './index';
 
 export const setIdNextQuestion = () => ({
-  type: SET_ID_NEXT_QUESTION
+  type: actions.SET_ID_NEXT_QUESTION
 });
 
 export const setUserAnswer = userAnswer => (dispatch, getState) => {
   const rightAnswer = selectRightAnswer(getState());
   dispatch({
-    type: SET_USER_ANSWER,
+    type: actions.SET_USER_ANSWER,
     userAnswer,
     rightAnswer
   });
 };
 
 export const setScore = score => ({
-  type: SET_SCORE,
+  type: actions.SET_SCORE,
   score
 });
 
 export const retakeQuiz = () => ({
-  type: RETAKE_QUIZ
+  type: actions.RETAKE_QUIZ
 });
 
 export const changeCategory = () => ({
-  type: CHANGE_CATEGORY
+  type: actions.CHANGE_CATEGORY
 });

@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-import createLogger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import { enableBatching } from 'redux-batched-actions';
 import thunk from 'redux-thunk';
 

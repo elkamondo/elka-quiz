@@ -16,14 +16,14 @@ export default function Root({ store }) {
   return (
     <Provider store={store}>
       <Router>
-        <React.Fragment>
+        <>
           <Switch>
             <Route exact path="/" component={Main} />
             <Route path="/categorie/:categoryName" component={Quiz} />
             <Redirect to="/" />
           </Switch>
           <Footer />
-        </React.Fragment>
+        </>
       </Router>
     </Provider>
   );

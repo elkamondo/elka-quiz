@@ -12,4 +12,7 @@ const dispatchToProps = {
   onSetUserAnswer: setUserAnswer
 };
 
-export default connect(stateToProps, dispatchToProps)(ProgressBar);
+export default connect(
+  stateToProps,
+  dispatchToProps
+)(ProgressBar);

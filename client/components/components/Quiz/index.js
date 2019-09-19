@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import { setIdNextQuestion } from 'Store/actions/game';
 import { setHighScore } from 'Store/actions/highscores';
-import { selectQuestion, selectChoices } from 'Store/reducers/game';
+import { selectQuestion, selectChoices } from 'Store/selectors';
 
 import GameBoard from 'Components/layouts/GameBoard';
 
@@ -20,4 +20,7 @@ const dispatchToProps = {
   onSetHighScore: setHighScore
 };
 
-export default connect(stateToProps, dispatchToProps)(GameBoard);
+export default connect(
+  stateToProps,
+  dispatchToProps
+)(GameBoard);

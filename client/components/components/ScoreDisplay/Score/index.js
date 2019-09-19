@@ -5,10 +5,12 @@ function Score({ score, record }) {
   return (
     <div className="column">
       <h4 className="subtitle is-4 is-pulled-left">
-        Score: <span className="has-text-weight-semibold">{score}</span>
+        Score:
+        <span className="has-text-weight-semibold">{score}</span>
       </h4>
       <h4 className="subtitle is-4 is-pulled-right">
-        Record: <span className="has-text-weight-semibold">{record}</span>
+        Record:
+        <span className="has-text-weight-semibold">{record}</span>
       </h4>
     </div>
   );

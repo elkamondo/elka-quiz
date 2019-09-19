@@ -3,27 +3,19 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class Result extends PureComponent {
-  static propTypes = {
-    score: PropTypes.number.isRequired,
-    record: PropTypes.number.isRequired,
-    correct: PropTypes.number.isRequired,
-    total: PropTypes.number.isRequired,
-    newRecord: PropTypes.bool.isRequired,
-    onRetakeQuiz: PropTypes.func.isRequired,
-    onChangeCategory: PropTypes.func.isRequired,
-    onSaveHighScores: PropTypes.func.isRequired
-  };
-
   componentDidMount() {
-    this.props.onSaveHighScores();
+    const { onSaveHighScores } = this.props;
+    onSaveHighScores();
   }
 
   handleRetakeQuiz = () => {
-    this.props.onRetakeQuiz();
+    const { onRetakeQuiz } = this.props;
+    onRetakeQuiz();
   };
 
   handleChangeCategory = () => {
-    this.props.onChangeCategory();
+    const { onChangeCategory } = this.props;
+    onChangeCategory();
   };
 
   render() {
@@ -61,7 +53,9 @@ class Result extends PureComponent {
                 <div className="column">
                   <p>Correct</p>
                   <span className="is-size-3 has-text-weight-bold">
-                    {correct}/{total}
+                    {correct}
+                    {'/'}
+                    {total}
                   </span>
                 </div>
                 <div className="column">
@@ -81,6 +75,7 @@ class Result extends PureComponent {
         <div className="columns is-multiline">
           <div className="column">
             <button
+              type="button"
               className="c-result-button button is-large is-size-5-mobile"
               onClick={this.handleRetakeQuiz}
             >
@@ -102,5 +97,16 @@ class Result extends PureComponent {
     );
   }
 }
+
+Result.propTypes = {
+  score: PropTypes.number.isRequired,
+  record: PropTypes.number.isRequired,
+  correct: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  newRecord: PropTypes.bool.isRequired,
+  onRetakeQuiz: PropTypes.func.isRequired,
+  onChangeCategory: PropTypes.func.isRequired,
+  onSaveHighScores: PropTypes.func.isRequired
+};
 
 export default Result;
