@@ -1,39 +1,22 @@
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = require('./webpack.config.js');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-const cssLoaders = [{ loader: 'css-loader', options: { importLoaders: 1 } }];
-
-const ExtractTextPluginConfig = new ExtractTextPlugin('bundle.css');
 
 config.devtool = 'cheap-module-eval-source-map';
 config.module.rules = config.module.rules.concat([
   {
-    test: /\.css$/,
-    use: ['css-hot-loader'].concat(
-      ExtractTextPluginConfig.extract({
-        fallback: 'style-loader',
-        use: cssLoaders
-      })
-    )
-  },
-  {
-    test: /\.scss$/,
-    use: ['css-hot-loader'].concat(
-      ExtractTextPluginConfig.extract({
-        fallback: 'style-loader',
-        use: [...cssLoaders, 'sass-loader']
-      })
-    )
-  },
-  {
-    test: /\.less$/,
-    use: ['css-hot-loader'].concat(
-      ExtractTextPluginConfig.extract({
-        fallback: 'style-loader',
-        use: [...cssLoaders, 'less-loader']
-      })
-    )
+    test: /\.(sa|sc|c)ss$/,
+    use: [
+      {
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+          hmr: process.env.NODE_ENV === 'development'
+        }
+      },
+      'css-loader',
+      'postcss-loader',
+      'sass-loader'
+    ]
   }
 ]);
 
@@ -51,7 +34,13 @@ config.plugins.push(
   })
 );
 
-config.plugins.push(ExtractTextPluginConfig);
-config.plugins.push(new webpack.NamedModulesPlugin());
+config.plugins.push(
+  new MiniCssExtractPlugin({
+    filename: '[name].css',
+    chunkFilename: '[id].css'
+  })
+);
+
+config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
 module.exports = config;

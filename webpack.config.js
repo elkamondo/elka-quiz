@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -9,14 +8,13 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   favicon: path.join(__dirname, 'client/assets/icons/favicon.ico')
 });
 
-const ModuleConcatenationConfig = new webpack.optimize.ModuleConcatenationPlugin();
-
 module.exports = {
   devServer: {
     contentBase: './dist',
     historyApiFallback: true,
     host: '0.0.0.0',
-    disableHostCheck: true
+    disableHostCheck: true,
+    hot: true
   },
   entry: ['./client/index.js'],
   output: {
@@ -70,7 +68,7 @@ module.exports = {
                 interlaced: false
               },
               pngquant: {
-                quality: '75-90',
+                quality: [0.75, 0.9],
                 speed: 3
               }
             }
@@ -87,5 +85,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig, ModuleConcatenationConfig]
+  plugins: [HtmlWebpackPluginConfig]
 };
